@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NFSPARTS — Запчасти для настоящих гонщиков</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="scanlines"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <span class="logo-bracket">[</span>NFSPARTS<span class="logo-bracket">]</span>
+      </a>
+      <nav class="main-nav">
+        <a href="#catalog">КАТАЛОГ</a>
+        <a href="#delivery">ДОСТАВКА</a>
+        <a href="#contacts">КОНТАКТЫ</a>
+      </nav>
+      <button class="cart-btn" id="cartBtn" aria-label="Открыть корзину">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span>КОРЗИНА</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-tag">
+          <span class="hero-tag-line"></span>
+          <span>STREET PERFORMANCE PARTS</span>
+        </div>
+        <h1 class="hero-title">
+          ЗАПЧАСТИ ДЛЯ<br/>
+          <span class="neon-cyan">НАСТОЯЩИХ</span><br/>
+          <span class="neon-orange glitch" data-text="ГОНЩИКОВ">ГОНЩИКОВ</span>
+        </h1>
+        <p class="hero-sub">
+          Турбины, выхлопы, тормоза, обвесы. Всё, что превращает обычную тачку в зверя.
+          Доставка по всей России. Подбор под твою модель — за минуту.
+        </p>
+        <div class="hero-actions">
+          <a href="#catalog" class="btn btn-primary">СМОТРЕТЬ КАТАЛОГ</a>
+          <a href="#delivery" class="btn btn-ghost">УСЛОВИЯ ДОСТАВКИ</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">12K+</span><span class="stat-label">SKU В НАЛИЧИИ</span></div>
+          <div class="stat"><span class="stat-num">48Ч</span><span class="stat-label">СРЕДНЯЯ ДОСТАВКА</span></div>
+          <div class="stat"><span class="stat-num">7</span><span class="stat-label">ЛЕТ НА РЫНКЕ</span></div>
+        </div>
+        <a href="#catalog" class="scroll-down" aria-label="Вниз">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <section id="catalog" class="catalog">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">— КАТАЛОГ</span>
+          <h2 class="section-title">ВЫБЕРИ <span class="neon-cyan">СВОЙ АПГРЕЙД</span></h2>
+        </div>
+
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="all">ВСЁ</button>
+          <button class="filter" data-filter="engine">ДВИГАТЕЛЬ</button>
+          <button class="filter" data-filter="exhaust">ВЫХЛОП</button>
+          <button class="filter" data-filter="brakes">ТОРМОЗА</button>
+          <button class="filter" data-filter="body">ОБВЕС</button>
+          <button class="filter" data-filter="wheels">КОЛЁСА</button>
+        </div>
+
+        <div class="products" id="products"></div>
+      </div>
+    </section>
+
+    <section id="delivery" class="delivery">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">— ДОСТАВКА</span>
+          <h2 class="section-title">БЫСТРО. <span class="neon-orange">КАК НА ТРАССЕ.</span></h2>
+        </div>
+        <div class="delivery-grid">
+          <div class="delivery-card">
+            <div class="delivery-num">01</div>
+            <h3>МОСКВА И СПб</h3>
+            <p>Курьером в день заказа при оформлении до 14:00. Самовывоз — через 2 часа.</p>
+            <span class="delivery-price">от 0 ₽</span>
+          </div>
+          <div class="delivery-card">
+            <div class="delivery-num">02</div>
+            <h3>РОССИЯ</h3>
+            <p>СДЭК, Boxberry, Почта России. Доставка от 1 до 5 дней в зависимости от региона.</p>
+            <span class="delivery-price">от 350 ₽</span>
+          </div>
+          <div class="delivery-card">
+            <div class="delivery-num">03</div>
+            <h3>СНГ И ЕВРОПА</h3>
+            <p>Международная доставка с растаможкой под ключ. Срок 7–14 дней.</p>
+            <span class="delivery-price">расчёт</span>
+          </div>
+          <div class="delivery-card">
+            <div class="delivery-num">04</div>
+            <h3>ГАРАНТИЯ</h3>
+            <p>Все детали оригинальные. 14 дней на возврат, 12 месяцев гарантии производителя.</p>
+            <span class="delivery-price">официально</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">— КОНТАКТЫ</span>
+          <h2 class="section-title">НАЙДИ <span class="neon-cyan">НАШ ГАРАЖ</span></h2>
+        </div>
+        <div class="contacts-grid">
+          <div class="contact-card">
+            <span class="contact-label">ТЕЛЕФОН</span>
+            <a class="contact-value" href="tel:+74951234567">+7 (495) 123-45-67</a>
+            <span class="contact-hint">ПН–ВС, 09:00–22:00</span>
+          </div>
+          <div class="contact-card">
+            <span class="contact-label">E-MAIL</span>
+            <a class="contact-value" href="mailto:order@nfsparts.ru">order@nfsparts.ru</a>
+            <span class="contact-hint">Отвечаем в течение часа</span>
+          </div>
+          <div class="contact-card">
+            <span class="contact-label">АДРЕС</span>
+            <span class="contact-value">Москва, ул. Скорости, 12</span>
+            <span class="contact-hint">Бокс 24/7 для самовывоза</span>
+          </div>
+          <div class="contact-card">
+            <span class="contact-label">СОЦСЕТИ</span>
+            <div class="socials">
+              <a href="#" aria-label="Telegram">TG</a>
+              <a href="#" aria-label="VK">VK</a>
+              <a href="#" aria-label="YouTube">YT</a>
+              <a href="#" aria-label="Instagram">IG</a>
+            </div>
+            <span class="contact-hint">Сборки, тесты, скидки</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">[NFSPARTS]</div>
+      <div class="footer-copy">© 2026 NFSPARTS. STREET LEGAL · TRACK READY</div>
+    </div>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>ТВОЯ <span class="neon-orange">КОРЗИНА</span></h3>
+      <button class="cart-close" id="cartClose" aria-label="Закрыть">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>ИТОГО</span>
+        <span class="cart-total-value" id="cartTotal">0 ₽</span>
+      </div>
+      <button class="btn btn-primary cart-checkout" id="cartCheckout">ОФОРМИТЬ ЗАКАЗ</button>
+    </div>
+  </aside>
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

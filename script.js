@@ -1,201 +1,122 @@
 const BRANDS = [
   {
-    id: 'mercedes', name: 'Mercedes-Benz', color: '#c0c4cb', glow: 'rgba(192, 196, 203, 0.6)',
+    id: 'mercedes', name: 'Mercedes-Benz',
     vin: ['WDB', 'WDC', 'WDD', 'WDF', '4JG', '55S'],
-    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#e8edf3"/><stop offset="1" stop-color="#7f8693"/>
-        </linearGradient>
-      </defs>
-      <circle cx="50" cy="50" r="42" fill="none" stroke="url(#mg)" stroke-width="3.5"/>
-      <g stroke="url(#mg)" stroke-width="4.5" stroke-linecap="round">
-        <line x1="50" y1="50" x2="50" y2="12"/>
-        <line x1="50" y1="50" x2="83" y2="69"/>
-        <line x1="50" y1="50" x2="17" y2="69"/>
-      </g>
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8edf3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="50" cy="50" r="40"/>
+      <line x1="50" y1="50" x2="50" y2="14"/>
+      <line x1="50" y1="50" x2="81" y2="68"/>
+      <line x1="50" y1="50" x2="19" y2="68"/>
     </svg>`,
   },
   {
-    id: 'bmw', name: 'BMW', color: '#1c69d4', glow: 'rgba(28, 105, 212, 0.6)',
+    id: 'bmw', name: 'BMW',
     vin: ['WBA', 'WBS', 'WBY', '4US', '5UX'],
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="bmwOuter" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0.7" stop-color="#1a2230"/><stop offset="1" stop-color="#000"/>
-        </radialGradient>
-      </defs>
-      <circle cx="50" cy="50" r="42" fill="url(#bmwOuter)" stroke="#9aa3b2" stroke-width="2"/>
-      <circle cx="50" cy="50" r="30" fill="#0a0e16" stroke="#fff" stroke-width="1"/>
-      <path d="M50 20 A30 30 0 0 1 80 50 L50 50 Z" fill="#fff"/>
-      <path d="M80 50 A30 30 0 0 1 50 80 L50 50 Z" fill="#1c69d4"/>
-      <path d="M50 80 A30 30 0 0 1 20 50 L50 50 Z" fill="#fff"/>
-      <path d="M20 50 A30 30 0 0 1 50 20 L50 50 Z" fill="#1c69d4"/>
+      <circle cx="50" cy="50" r="38" fill="none" stroke="#e8edf3" stroke-width="3"/>
+      <circle cx="50" cy="50" r="26" fill="none" stroke="#e8edf3" stroke-width="2"/>
+      <path d="M50 24 A26 26 0 0 1 76 50 L50 50 Z" fill="#e8edf3" opacity="0.95"/>
+      <path d="M50 76 A26 26 0 0 1 24 50 L50 50 Z" fill="#e8edf3" opacity="0.95"/>
+      <text x="50" y="20" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="700" font-size="9" fill="#e8edf3" letter-spacing="2">BMW</text>
     </svg>`,
   },
   {
-    id: 'audi', name: 'Audi', color: '#e8edf3', glow: 'rgba(232, 237, 243, 0.5)',
+    id: 'audi', name: 'Audi',
     vin: ['WAU', 'WA1', 'TRU'],
-    svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#e8edf3" stroke-width="3.5">
-        <circle cx="22" cy="30" r="18"/>
-        <circle cx="55" cy="30" r="18"/>
-        <circle cx="88" cy="30" r="18"/>
-        <circle cx="121" cy="30" r="18"/>
-      </g>
+    svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8edf3" stroke-width="3.5">
+      <circle cx="22" cy="30" r="18"/>
+      <circle cx="54" cy="30" r="18"/>
+      <circle cx="86" cy="30" r="18"/>
+      <circle cx="118" cy="30" r="18"/>
     </svg>`,
   },
   {
-    id: 'vw', name: 'Volkswagen', color: '#1e90ff', glow: 'rgba(30, 144, 255, 0.6)',
+    id: 'vw', name: 'Volkswagen',
     vin: ['WVW', 'WV1', 'WV2', '3VW'],
     svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="vwg" cx="0.4" cy="0.3" r="0.7">
-          <stop offset="0" stop-color="#3b9eff"/><stop offset="1" stop-color="#0a4d8c"/>
-        </radialGradient>
-      </defs>
-      <circle cx="50" cy="50" r="42" fill="url(#vwg)" stroke="#fff" stroke-width="2.5"/>
-      <g fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-        <path d="M25 32 L42 70 L50 52 L58 70 L75 32"/>
-        <path d="M33 32 L50 60 L67 32"/>
+      <circle cx="50" cy="50" r="38" fill="none" stroke="#e8edf3" stroke-width="3"/>
+      <g fill="none" stroke="#e8edf3" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M28 36 L41 70 L50 54 L59 70 L72 36"/>
+        <path d="M36 36 L50 62 L64 36"/>
       </g>
     </svg>`,
   },
   {
-    id: 'porsche', name: 'Porsche', color: '#ffd700', glow: 'rgba(255, 215, 0, 0.55)',
+    id: 'porsche', name: 'Porsche',
     vin: ['WP0', 'WP1'],
-    svg: `<svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#ffeb7a"/><stop offset="1" stop-color="#a8801a"/>
-        </linearGradient>
-      </defs>
-      <path d="M50 5 L88 22 L88 60 Q88 88 50 105 Q12 88 12 60 L12 22 Z"
-            fill="url(#pg)" stroke="#1a1a1a" stroke-width="2"/>
-      <rect x="36" y="30" width="28" height="55" fill="#1a1a1a"/>
-      <text x="50" y="58" text-anchor="middle" font-family="Orbitron, sans-serif"
-            font-weight="900" font-size="11" fill="#ffd700" letter-spacing="1">PORSCHE</text>
-      <g transform="translate(38 65)">
-        <rect x="0" y="0" width="24" height="14" fill="#c81515"/>
-        <path d="M0 0 h24 v14 h-24z M4 0 v14 M8 0 v14 M12 0 v14 M16 0 v14 M20 0 v14"
-              stroke="#fff" stroke-width="0.8"/>
-      </g>
+    svg: `<svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8edf3" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M50 8 L85 22 L85 60 Q85 86 50 102 Q15 86 15 60 L15 22 Z"/>
+      <text x="50" y="60" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="900" font-size="11" fill="#e8edf3" letter-spacing="1.5">PORSCHE</text>
+      <path d="M30 70 L70 70" stroke="#e8edf3" stroke-width="2"/>
+      <path d="M50 22 L50 88" stroke="#e8edf3" stroke-width="0.8" opacity="0.4"/>
     </svg>`,
   },
   {
-    id: 'opel', name: 'Opel', color: '#ffd400', glow: 'rgba(255, 212, 0, 0.55)',
+    id: 'opel', name: 'Opel',
     vin: ['W0L', 'W0V'],
-    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="og" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0.7" stop-color="#1a2230"/><stop offset="1" stop-color="#000"/>
-        </radialGradient>
-      </defs>
-      <circle cx="50" cy="50" r="42" fill="url(#og)" stroke="#c0c4cb" stroke-width="2"/>
-      <circle cx="50" cy="50" r="35" fill="none" stroke="#e8edf3" stroke-width="1.5"/>
-      <path d="M22 50 L78 50" stroke="#ffd400" stroke-width="5" stroke-linecap="round"
-            filter="drop-shadow(0 0 4px #ffd400)"/>
-      <path d="M40 38 L60 62 M40 62 L60 38" stroke="#ffd400" stroke-width="5"
-            stroke-linecap="round" filter="drop-shadow(0 0 4px #ffd400)"/>
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8edf3" stroke-width="2.5">
+      <circle cx="50" cy="50" r="38"/>
+      <circle cx="50" cy="50" r="30" opacity="0.5"/>
+      <path d="M16 50 L84 50" stroke-width="5" stroke-linecap="round"/>
+      <path d="M50 28 Q60 50 50 72" stroke-width="3.5" stroke-linecap="round"/>
     </svg>`,
   },
   {
-    id: 'jaguar', name: 'Jaguar', color: '#c0c4cb', glow: 'rgba(192, 196, 203, 0.55)',
+    id: 'jaguar', name: 'Jaguar',
     vin: ['SAJ', 'SAD'],
-    svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="jg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#f5f7fa"/><stop offset="1" stop-color="#5a6370"/>
-        </linearGradient>
-      </defs>
-      <path d="M5 38 Q15 30 25 32 L30 22 L40 24 Q42 18 48 16 L52 22 Q60 18 75 22
-               L88 30 Q100 26 110 30 L120 24 L122 32 L135 38 L130 42 L125 38
-               Q115 42 105 38 L95 44 Q80 42 70 38 L55 44 Q40 44 28 42 L18 46 Z"
-            fill="url(#jg)" stroke="#1a1a1a" stroke-width="1"/>
-      <circle cx="46" cy="28" r="1.5" fill="#000"/>
+    svg: `<svg viewBox="0 0 140 70" xmlns="http://www.w3.org/2000/svg" fill="#e8edf3">
+      <path d="M8 42 Q18 36 28 38 L34 28 Q40 24 48 24 Q52 18 58 20 Q66 18 76 22 L88 30 Q98 28 108 30 L118 24 L120 32 L132 38 L128 42 L120 40 Q110 44 100 40 L92 46 Q78 44 68 40 L54 46 Q40 46 28 44 L18 48 Z" opacity="0.95"/>
+      <circle cx="46" cy="28" r="1.5" fill="#0a0e16"/>
     </svg>`,
   },
   {
-    id: 'landrover', name: 'Land Rover', color: '#3a6a3e', glow: 'rgba(58, 106, 62, 0.6)',
+    id: 'landrover', name: 'Land Rover',
     vin: ['SAL'],
     svg: `<svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="lrg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#4d7d52"/><stop offset="1" stop-color="#1f3823"/>
-        </linearGradient>
-      </defs>
-      <ellipse cx="70" cy="40" rx="65" ry="32" fill="url(#lrg)" stroke="#c0c4cb" stroke-width="2.5"/>
-      <ellipse cx="70" cy="40" rx="58" ry="26" fill="none" stroke="#c0c4cb" stroke-width="1"/>
-      <text x="70" y="38" text-anchor="middle" font-family="Orbitron, sans-serif"
-            font-weight="900" font-size="13" fill="#fff" letter-spacing="1.5">LAND</text>
-      <text x="70" y="54" text-anchor="middle" font-family="Orbitron, sans-serif"
-            font-weight="900" font-size="13" fill="#fff" letter-spacing="1.5">ROVER</text>
+      <ellipse cx="70" cy="40" rx="62" ry="30" fill="none" stroke="#e8edf3" stroke-width="2.5"/>
+      <ellipse cx="70" cy="40" rx="54" ry="23" fill="none" stroke="#e8edf3" stroke-width="1" opacity="0.5"/>
+      <text x="70" y="37" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="900" font-size="12" fill="#e8edf3" letter-spacing="1.5">LAND</text>
+      <text x="70" y="54" text-anchor="middle" font-family="Orbitron, sans-serif" font-weight="900" font-size="12" fill="#e8edf3" letter-spacing="1.5">ROVER</text>
     </svg>`,
   },
   {
-    id: 'haval', name: 'Haval', color: '#e8edf3', glow: 'rgba(232, 237, 243, 0.55)',
+    id: 'haval', name: 'Haval',
     vin: ['LGW'],
-    svg: `<svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#fff"/><stop offset="0.5" stop-color="#aab0bb"/><stop offset="1" stop-color="#6a7180"/>
-        </linearGradient>
-      </defs>
-      <g fill="url(#hg)" stroke="#1a1a1a" stroke-width="0.8"
-         font-family="Orbitron, Arial, sans-serif" font-weight="900" font-style="italic">
-        <text x="100" y="38" text-anchor="middle" font-size="34" letter-spacing="3">HAVAL</text>
-      </g>
+    svg: `<svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+      <text x="100" y="42" text-anchor="middle" font-family="Orbitron, Arial, sans-serif" font-weight="900" font-style="italic" font-size="36" fill="#e8edf3" letter-spacing="3">HAVAL</text>
     </svg>`,
   },
   {
-    id: 'geely', name: 'Geely', color: '#1c69d4', glow: 'rgba(28, 105, 212, 0.6)',
+    id: 'geely', name: 'Geely',
     vin: ['L6T', 'LB3'],
-    svg: `<svg viewBox="0 0 110 80" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#ffe07a"/><stop offset="1" stop-color="#a07d1a"/>
-        </linearGradient>
-      </defs>
-      <path d="M10 8 L100 8 L100 60 Q55 78 10 60 Z" fill="url(#gg)" stroke="#1a1a1a" stroke-width="2"/>
-      <g fill="#1c69d4" stroke="#0a1a40" stroke-width="0.5">
-        <rect x="18" y="18" width="16" height="14"/>
-        <rect x="46" y="18" width="16" height="14"/>
-        <rect x="74" y="18" width="16" height="14"/>
-        <rect x="18" y="38" width="16" height="14"/>
-        <rect x="46" y="38" width="16" height="14"/>
-        <rect x="74" y="38" width="16" height="14"/>
+    svg: `<svg viewBox="0 0 110 80" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8edf3" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M12 12 L98 12 L98 56 Q55 74 12 56 Z"/>
+      <g stroke-width="2">
+        <rect x="20" y="20" width="14" height="12"/>
+        <rect x="48" y="20" width="14" height="12"/>
+        <rect x="76" y="20" width="14" height="12"/>
+        <rect x="20" y="38" width="14" height="12"/>
+        <rect x="48" y="38" width="14" height="12"/>
+        <rect x="76" y="38" width="14" height="12"/>
       </g>
     </svg>`,
   },
   {
-    id: 'chery', name: 'Chery', color: '#c0c4cb', glow: 'rgba(192, 196, 203, 0.55)',
+    id: 'chery', name: 'Chery',
     vin: ['LVV'],
-    svg: `<svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#f5f7fa"/><stop offset="1" stop-color="#6a7180"/>
-        </linearGradient>
-      </defs>
-      <ellipse cx="70" cy="40" rx="62" ry="28" fill="none" stroke="url(#cg)" stroke-width="3.5"/>
-      <g fill="url(#cg)" stroke="#1a1a1a" stroke-width="0.8">
-        <path d="M40 48 L60 22 L70 38 L80 22 L100 48 L92 48 L78 30 L70 44 L62 30 L48 48 Z"/>
-        <rect x="56" y="48" width="28" height="3"/>
-      </g>
+    svg: `<svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8edf3" stroke-width="2.8" stroke-linejoin="round">
+      <ellipse cx="70" cy="40" rx="60" ry="26"/>
+      <path d="M40 50 L60 24 L70 38 L80 24 L100 50" stroke-width="3.2" stroke-linecap="round"/>
+      <line x1="56" y1="52" x2="84" y2="52" stroke-width="2.5"/>
     </svg>`,
   },
   {
-    id: 'omoda', name: 'Omoda', color: '#19e5ff', glow: 'rgba(25, 229, 255, 0.6)',
-    vin: ['LVV'],
-    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="omg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#e8edf3"/><stop offset="1" stop-color="#5a6370"/>
-        </linearGradient>
-      </defs>
-      <circle cx="50" cy="50" r="40" fill="none" stroke="url(#omg)" stroke-width="6"/>
-      <path d="M50 12 Q26 38 50 88 Q74 38 50 12 Z"
-            fill="none" stroke="url(#omg)" stroke-width="4"/>
-      <circle cx="50" cy="50" r="4" fill="url(#omg)"/>
+    id: 'omoda', name: 'Omoda',
+    vin: ['LVA'],
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8edf3" stroke-width="4" stroke-linecap="round">
+      <circle cx="50" cy="50" r="36"/>
+      <path d="M50 14 Q24 38 50 86 Q76 38 50 14 Z" stroke-width="3"/>
+      <circle cx="50" cy="50" r="3.5" fill="#e8edf3"/>
     </svg>`,
   },
 ];
@@ -226,6 +147,7 @@ const PRODUCTS = [
 const cart = new Map();
 let activeBrand = null;
 let activeCategory = 'all';
+let searchQuery = '';
 
 function formatPrice(n) {
   return new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
@@ -235,20 +157,17 @@ function renderBrands() {
   const grid = document.getElementById('brandsGrid');
   if (!grid) return;
   grid.innerHTML = BRANDS.map(b => `
-    <button class="brand-card" data-brand="${b.id}"
-            style="--brand-color: ${b.color}; --brand-glow: ${b.glow};"
-            aria-label="${b.name}">
-      <div class="brand-logo">${b.svg}</div>
+    <div class="brand-card-wrap" data-brand-wrap="${b.id}">
+      <button class="brand-card" data-brand="${b.id}" aria-label="${b.name}">
+        <div class="brand-logo">${b.svg}</div>
+      </button>
       <span class="brand-name">${b.name}</span>
-    </button>
-  `).join('') + `<div style="grid-column: 1 / -1;">
-    <button class="brand-clear" id="brandClear" hidden>× СБРОСИТЬ МАРКУ</button>
-  </div>`;
+    </div>
+  `).join('');
 
   grid.querySelectorAll('.brand-card').forEach(card => {
     card.addEventListener('click', () => selectBrand(card.dataset.brand));
   });
-  document.getElementById('brandClear').addEventListener('click', clearBrand);
 }
 
 function selectBrand(id) {
@@ -256,16 +175,22 @@ function selectBrand(id) {
   document.querySelectorAll('.brand-card').forEach(c => {
     c.classList.toggle('active', c.dataset.brand === id);
   });
-  document.getElementById('brandClear').hidden = false;
+  document.querySelectorAll('.brand-card-wrap').forEach(w => {
+    w.classList.toggle('active-wrap', w.dataset.brandWrap === id);
+  });
+  const clearBtn = document.getElementById('brandClear');
+  if (clearBtn) clearBtn.hidden = false;
   const brand = BRANDS.find(b => b.id === id);
-  showToast(`Марка: ${brand.name.toUpperCase()}`);
+  if (brand) showToast(`Марка: ${brand.name.toUpperCase()}`);
   document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
 }
 
 function clearBrand() {
   activeBrand = null;
   document.querySelectorAll('.brand-card').forEach(c => c.classList.remove('active'));
-  document.getElementById('brandClear').hidden = true;
+  document.querySelectorAll('.brand-card-wrap').forEach(w => w.classList.remove('active-wrap'));
+  const clearBtn = document.getElementById('brandClear');
+  if (clearBtn) clearBtn.hidden = true;
   showToast('Сброшено. Показаны все марки');
 }
 
@@ -278,9 +203,23 @@ function detectBrandFromVin(vin) {
   return null;
 }
 
-function renderProducts(filter = 'all') {
+function renderProducts() {
   const grid = document.getElementById('products');
-  const items = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === filter);
+  const q = searchQuery.trim().toLowerCase();
+  let items = activeCategory === 'all'
+    ? PRODUCTS
+    : PRODUCTS.filter(p => p.cat === activeCategory);
+  if (q) {
+    items = items.filter(p =>
+      p.name.toLowerCase().includes(q) ||
+      p.desc.toLowerCase().includes(q) ||
+      p.cat_ru.toLowerCase().includes(q)
+    );
+  }
+  if (items.length === 0) {
+    grid.innerHTML = `<div class="no-results">Ничего не найдено по запросу «${searchQuery}». Попробуй другой артикул или название.</div>`;
+    return;
+  }
   grid.innerHTML = items.map(p => `
     <article class="product">
       ${p.badge ? `<span class="product-badge ${p.badgeType || ''}">${p.badge}</span>` : ''}
@@ -393,7 +332,34 @@ document.getElementById('filters').addEventListener('click', e => {
   document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
   e.target.classList.add('active');
   activeCategory = e.target.dataset.filter;
-  renderProducts(activeCategory);
+  renderProducts();
+});
+
+const searchForm = document.getElementById('searchForm');
+const searchInput = document.getElementById('searchInput');
+if (searchForm && searchInput) {
+  searchForm.addEventListener('submit', e => {
+    e.preventDefault();
+    searchQuery = searchInput.value.trim();
+    renderProducts();
+    if (searchQuery) {
+      showToast(`Поиск: ${searchQuery}`);
+      document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+  searchInput.addEventListener('input', () => {
+    if (searchInput.value.trim() === '' && searchQuery) {
+      searchQuery = '';
+      renderProducts();
+    }
+  });
+}
+
+document.querySelectorAll('.sub-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelectorAll('.sub-link').forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+  });
 });
 
 const vinForm = document.getElementById('vinForm');
@@ -424,6 +390,9 @@ if (vinForm) {
     }
   });
 }
+
+const brandClearBtn = document.getElementById('brandClear');
+if (brandClearBtn) brandClearBtn.addEventListener('click', clearBrand);
 
 renderBrands();
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NFSPARTS — Запчасти для настоящих гонщиков</title>
+  <title>NFSPARTS — Запчасти на полных оборотах</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
@@ -14,26 +14,55 @@
   <div class="scanlines"></div>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="#top" class="logo">
-        <span class="logo-bracket">[</span>NFSPARTS<span class="logo-bracket">]</span>
-      </a>
-      <nav class="main-nav">
-        <a href="#brands">МАРКИ</a>
-        <a href="#catalog">КАТАЛОГ</a>
-        <a href="#delivery">ДОСТАВКА</a>
-        <a href="#contacts">КОНТАКТЫ</a>
-      </nav>
-      <button class="cart-btn" id="cartBtn" aria-label="Открыть корзину">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="9" cy="21" r="1"/>
-          <circle cx="20" cy="21" r="1"/>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-        </svg>
-        <span>КОРЗИНА</span>
-        <span class="cart-count" id="cartCount">0</span>
+    <div class="container header-top">
+      <button class="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
       </button>
+
+      <a href="#top" class="brand-logo-top">
+        <span class="brand-logo-nfs">NFS</span><span class="brand-logo-parts">PARTS</span>
+      </a>
+
+      <form class="search-bar" id="searchForm">
+        <input
+          type="text"
+          class="search-input"
+          id="searchInput"
+          placeholder="Поиск по артикулу, названию, VIN..."
+          autocomplete="off"
+        />
+        <button type="submit" class="search-btn">НАЙТИ</button>
+      </form>
+
+      <a href="tel:+79000000000" class="header-phone">+7 (900) 000-00-00</a>
+
+      <div class="header-icons">
+        <button class="icon-btn" aria-label="Сравнить" title="Сравнить">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+          </svg>
+        </button>
+        <button class="icon-btn cart-icon-btn" id="cartBtn" aria-label="Корзина">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
     </div>
+
+    <nav class="sub-nav">
+      <div class="container sub-nav-inner">
+        <a href="#catalog" class="sub-link active" data-section="catalog">КАТАЛОГ</a>
+        <a href="#brands" class="sub-link" data-section="brands">VIN-ЗАПРОС</a>
+        <a href="#delivery" class="sub-link" data-section="delivery">ДОСТАВКА</a>
+        <a href="#forum" class="sub-link" data-section="forum">ФОРУМ</a>
+        <a href="#contacts" class="sub-link" data-section="contacts">КОНТАКТЫ</a>
+      </div>
+    </nav>
   </header>
 
   <main id="top">
@@ -41,44 +70,66 @@
       <div class="container">
         <div class="hero-tag">
           <span class="hero-tag-line"></span>
-          <span>STREET PERFORMANCE PARTS</span>
+          <span>НА ПОЛНЫХ ОБОРОТАХ — 24/7</span>
+          <span class="hero-tag-line"></span>
         </div>
         <h1 class="hero-title">
-          ЗАПЧАСТИ ДЛЯ<br/>
-          <span class="neon-cyan">НАСТОЯЩИХ</span><br/>
-          <span class="neon-orange glitch" data-text="ГОНЩИКОВ">ГОНЩИКОВ</span>
+          <span class="neon-orange">NFS</span><br/>
+          <span class="neon-cyan">PARTS</span>
         </h1>
         <p class="hero-sub">
-          Турбины, выхлопы, тормоза, обвесы. Всё, что превращает обычную тачку в зверя.
-          Доставка по всей России. Подбор под твою модель — за минуту.
+          Подбираем запчасти быстрее, чем ты переключаешь передачу.<br/>
+          Ответ за <span class="accent-orange">30 минут</span>. Доставка по всей России.
         </p>
         <div class="hero-actions">
-          <a href="#catalog" class="btn btn-primary">СМОТРЕТЬ КАТАЛОГ</a>
-          <a href="#delivery" class="btn btn-ghost">УСЛОВИЯ ДОСТАВКИ</a>
+          <a href="#brands" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+            ЗАПРОС ПО VIN
+          </a>
+          <a href="#catalog" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V4a1 1 0 0 1 1-1h13l-2 5 2 5H5"/></svg>
+            КАТАЛОГ
+          </a>
         </div>
-        <div class="hero-stats">
-          <div class="stat"><span class="stat-num">12K+</span><span class="stat-label">SKU В НАЛИЧИИ</span></div>
-          <div class="stat"><span class="stat-num">48Ч</span><span class="stat-label">СРЕДНЯЯ ДОСТАВКА</span></div>
-          <div class="stat"><span class="stat-num">7</span><span class="stat-label">ЛЕТ НА РЫНКЕ</span></div>
+      </div>
+    </section>
+
+    <section class="advantages">
+      <div class="container advantages-grid">
+        <div class="adv-card adv-orange">
+          <div class="adv-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+          </div>
+          <h3>ОТВЕТ ЗА 30 МИН</h3>
+          <p>Обрабатываем заявки быстрее, чем вы переключите передачу</p>
         </div>
-        <a href="#catalog" class="scroll-down" aria-label="Вниз">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
-          </svg>
-        </a>
+        <div class="adv-card adv-cyan">
+          <div class="adv-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V4a1 1 0 0 1 1-1h13l-2 5 2 5H5"/></svg>
+          </div>
+          <h3>ДОСТАВКА В ФИНИШ</h3>
+          <p>По России от 1 дня — прямо на финишную прямую</p>
+        </div>
+        <div class="adv-card adv-orange">
+          <div class="adv-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>ПОДБОР НА ОБОРОТАХ</h3>
+          <p>Найдём деталь по VIN без остановок и лишних вопросов</p>
+        </div>
       </div>
     </section>
 
     <section id="brands" class="brands">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">— ПОДБОР ПО АВТО</span>
-          <h2 class="section-title">ВЫБЕРИ <span class="neon-cyan">СВОЮ МАРКУ</span></h2>
+          <span class="section-kicker">ВЫБЕРИТЕ МАРКУ</span>
+          <h2 class="section-title">ВАШЕ <span class="neon-cyan">АВТО</span></h2>
         </div>
 
         <form class="vin-form" id="vinForm">
           <div class="vin-field">
-            <label class="vin-label">VIN КОД АВТО</label>
+            <label class="vin-label">VIN КОД</label>
             <input
               type="text"
               id="vinInput"
@@ -93,14 +144,15 @@
         <p class="vin-hint" id="vinHint">VIN можно найти в ПТС, СТС или на стойке двери водителя. Определим марку и подберём детали.</p>
 
         <div class="brands-grid" id="brandsGrid"></div>
+        <button class="brand-clear" id="brandClear" hidden>× СБРОСИТЬ МАРКУ</button>
       </div>
     </section>
 
     <section id="catalog" class="catalog">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">— КАТАЛОГ</span>
-          <h2 class="section-title">ВЫБЕРИ <span class="neon-cyan">СВОЙ АПГРЕЙД</span></h2>
+          <span class="section-kicker">КАТАЛОГ ДЕТАЛЕЙ</span>
+          <h2 class="section-title">ВЫБЕРИ <span class="neon-orange">АПГРЕЙД</span></h2>
         </div>
 
         <div class="filters" id="filters">
@@ -119,7 +171,7 @@
     <section id="delivery" class="delivery">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">— ДОСТАВКА</span>
+          <span class="section-kicker">ДОСТАВКА</span>
           <h2 class="section-title">БЫСТРО. <span class="neon-orange">КАК НА ТРАССЕ.</span></h2>
         </div>
         <div class="delivery-grid">
@@ -132,19 +184,19 @@
           <div class="delivery-card">
             <div class="delivery-num">02</div>
             <h3>РОССИЯ</h3>
-            <p>СДЭК, Boxberry, Почта России. Доставка от 1 до 5 дней в зависимости от региона.</p>
+            <p>СДЭК, Boxberry, Почта России. Доставка от 1 до 5 дней.</p>
             <span class="delivery-price">от 350 ₽</span>
           </div>
           <div class="delivery-card">
             <div class="delivery-num">03</div>
             <h3>СНГ И ЕВРОПА</h3>
-            <p>Международная доставка с растаможкой под ключ. Срок 7–14 дней.</p>
+            <p>Международная доставка с растаможкой под ключ. 7–14 дней.</p>
             <span class="delivery-price">расчёт</span>
           </div>
           <div class="delivery-card">
             <div class="delivery-num">04</div>
             <h3>ГАРАНТИЯ</h3>
-            <p>Все детали оригинальные. 14 дней на возврат, 12 месяцев гарантии производителя.</p>
+            <p>Оригинальные детали. 14 дней на возврат, 12 месяцев гарантии.</p>
             <span class="delivery-price">официально</span>
           </div>
         </div>
@@ -154,13 +206,13 @@
     <section id="contacts" class="contacts">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">— КОНТАКТЫ</span>
+          <span class="section-kicker">КОНТАКТЫ</span>
           <h2 class="section-title">НАЙДИ <span class="neon-cyan">НАШ ГАРАЖ</span></h2>
         </div>
         <div class="contacts-grid">
           <div class="contact-card">
             <span class="contact-label">ТЕЛЕФОН</span>
-            <a class="contact-value" href="tel:+74951234567">+7 (495) 123-45-67</a>
+            <a class="contact-value" href="tel:+79000000000">+7 (900) 000-00-00</a>
             <span class="contact-hint">ПН–ВС, 09:00–22:00</span>
           </div>
           <div class="contact-card">
@@ -190,8 +242,10 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-logo">[NFSPARTS]</div>
-      <div class="footer-copy">© 2026 NFSPARTS. STREET LEGAL · TRACK READY</div>
+      <div class="footer-logo">
+        <span class="brand-logo-nfs">NFS</span><span class="brand-logo-parts">PARTS</span>
+      </div>
+      <div class="footer-copy">© 2026 NFSPARTS · STREET LEGAL · TRACK READY</div>
     </div>
   </footer>
 

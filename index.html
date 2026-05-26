@@ -19,6 +19,7 @@
         <span class="logo-bracket">[</span>NFSPARTS<span class="logo-bracket">]</span>
       </a>
       <nav class="main-nav">
+        <a href="#brands">МАРКИ</a>
         <a href="#catalog">КАТАЛОГ</a>
         <a href="#delivery">ДОСТАВКА</a>
         <a href="#contacts">КОНТАКТЫ</a>
@@ -65,6 +66,33 @@
             <path d="M12 5v14M5 12l7 7 7-7"/>
           </svg>
         </a>
+      </div>
+    </section>
+
+    <section id="brands" class="brands">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">— ПОДБОР ПО АВТО</span>
+          <h2 class="section-title">ВЫБЕРИ <span class="neon-cyan">СВОЮ МАРКУ</span></h2>
+        </div>
+
+        <form class="vin-form" id="vinForm">
+          <div class="vin-field">
+            <label class="vin-label">VIN КОД АВТО</label>
+            <input
+              type="text"
+              id="vinInput"
+              class="vin-input"
+              placeholder="Введи 17 символов VIN (например WBAFR9C50BC123456)"
+              maxlength="17"
+              autocomplete="off"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary vin-submit">НАЙТИ ЗАПЧАСТИ</button>
+        </form>
+        <p class="vin-hint" id="vinHint">VIN можно найти в ПТС, СТС или на стойке двери водителя. Определим марку и подберём детали.</p>
+
+        <div class="brands-grid" id="brandsGrid"></div>
       </div>
     </section>
 
